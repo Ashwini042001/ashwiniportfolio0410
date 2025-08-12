@@ -67,12 +67,16 @@ const Contact = () => {
           </div>
           <form onSubmit={onSubmit} className="card-glass rounded-xl p-6 space-y-4">
             <div>
-              <label className="block text-sm mb-1" htmlFor="name">Name</label>
-              <input id="name" name="name" required className="w-full rounded-md border bg-background px-3 py-2" />
+              <label className="block text-sm mb-1" htmlFor="from_name">Name</label>
+              <input id="from_name" name="from_name" required className="w-full rounded-md border bg-background px-3 py-2" />
             </div>
             <div>
-              <label className="block text-sm mb-1" htmlFor="email">Email</label>
-              <input id="email" type="email" name="email" required className="w-full rounded-md border bg-background px-3 py-2" />
+              <label className="block text-sm mb-1" htmlFor="from_email">Email</label>
+              <input id="from_email" type="email" name="from_email" required className="w-full rounded-md border bg-background px-3 py-2" />
+            </div>
+            <div>
+              <label className="block text-sm mb-1" htmlFor="subject">Subject</label>
+              <input id="subject" name="subject" required className="w-full rounded-md border bg-background px-3 py-2" />
             </div>
             <div>
               <label className="block text-sm mb-1" htmlFor="message">Message</label>
@@ -89,3 +93,4 @@ const Contact = () => {
 };
 
 export default Contact;
+
