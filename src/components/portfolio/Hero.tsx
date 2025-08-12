@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { ExternalLink, Download } from "lucide-react";
+import heroImage from "@/assets/hero-ashwini.jpg";
 
 const Hero = () => {
   return (
@@ -37,10 +38,12 @@ const Hero = () => {
           <div className="rounded-2xl p-2 bg-gradient-hero">
             <div className="card-glass rounded-xl p-2">
               <img
-                src="/placeholder.svg"
-                alt="Ashwini Surendra Deshpande profile photo"
+                src={heroImage}
+                alt="Professional headshot of Ashwini Surendra Deshpande"
                 className="rounded-lg w-full h-auto"
-                loading="lazy"
+                loading="eager"
+                decoding="async"
+                fetchPriority="high"
               />
             </div>
           </div>
