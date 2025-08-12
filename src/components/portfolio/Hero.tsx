@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { ExternalLink, Download } from "lucide-react";
+import { ExternalLink } from "lucide-react";
 import heroImage from "@/assets/hero-ashwini.jpg";
 
 const Hero = () => {
@@ -25,11 +25,6 @@ const Hero = () => {
             <a href="#contact">
               <Button variant="secondary" size="xl" className="rounded-full hover-scale">
                 Contact Me
-              </Button>
-            </a>
-            <a href="#" onClick={(e)=>e.preventDefault()} aria-label="Download Resume">
-              <Button variant="outline" size="xl" className="rounded-full hover-scale">
-                <Download className="mr-2"/> Download Resume
               </Button>
             </a>
           </div>
