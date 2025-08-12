@@ -35,7 +35,7 @@ const Hero = () => {
               <img
                 src={heroImage}
                 alt="Professional headshot of Ashwini Surendra Deshpande"
-                className="className="rounded-lg max-w-[300px] max-h-[400px] object-cover""
+                className="className="rounded-lg max-w-[300px] max-h-[400px] object-cover"
                 loading="eager"
                 decoding="async"
                 fetchPriority="high"
