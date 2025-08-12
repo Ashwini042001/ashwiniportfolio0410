@@ -1,6 +1,7 @@
 import { FormEvent, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { toast } from "sonner";
+import { Mail, Phone, Linkedin, Github } from "lucide-react";
 
 const FORM_ENDPOINT = ""; // Add your Formspree endpoint like: https://formspree.io/f/xxxxxxx
 
@@ -49,10 +50,26 @@ const Contact = () => {
           <div className="card-glass rounded-xl p-6">
             <h3 className="font-semibold mb-3">Contact Details</h3>
             <ul className="space-y-2 text-sm">
-              <li><strong>Email:</strong> <a className="underline" href="mailto:ashwinideshpande2001@gmail.com">ashwinideshpande2001@gmail.com</a></li>
-              <li><strong>Phone:</strong> <a className="underline" href="tel:+917899767017">+91 7899767017</a></li>
-              <li><strong>LinkedIn:</strong> <a className="underline" href="https://www.linkedin.com/in/ashwini-deshpande04102001/" target="_blank" rel="noreferrer">Profile</a></li>
-              <li><strong>GitHub:</strong> <a className="underline" href="https://github.com/Ashwini042001" target="_blank" rel="noreferrer">@Ashwini042001</a></li>
+              <li className="flex items-center gap-2">
+                <Mail className="h-4 w-4 text-primary" aria-hidden="true" />
+                <span className="font-medium">Email:</span>
+                <a className="underline" href="mailto:ashwinideshpande2001@gmail.com">ashwinideshpande2001@gmail.com</a>
+              </li>
+              <li className="flex items-center gap-2">
+                <Phone className="h-4 w-4 text-primary" aria-hidden="true" />
+                <span className="font-medium">Phone:</span>
+                <a className="underline" href="tel:+917899767017">+91 7899767017</a>
+              </li>
+              <li className="flex items-center gap-2">
+                <Linkedin className="h-4 w-4 text-primary" aria-hidden="true" />
+                <span className="font-medium">LinkedIn:</span>
+                <a className="underline" href="https://www.linkedin.com/in/ashwini-deshpande04102001/" target="_blank" rel="noreferrer">Profile</a>
+              </li>
+              <li className="flex items-center gap-2">
+                <Github className="h-4 w-4 text-primary" aria-hidden="true" />
+                <span className="font-medium">GitHub:</span>
+                <a className="underline" href="https://github.com/Ashwini042001" target="_blank" rel="noreferrer">@Ashwini042001</a>
+              </li>
             </ul>
           </div>
           <form onSubmit={onSubmit} className="card-glass rounded-xl p-6 space-y-4">
