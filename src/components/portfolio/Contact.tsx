@@ -2,8 +2,11 @@ import { FormEvent, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { toast } from "sonner";
 import { Mail, Phone, Linkedin, Github } from "lucide-react";
+import emailjs from "@emailjs/browser";
 
-const FORM_ENDPOINT = ""; // Add your Formspree endpoint like: https://formspree.io/f/xxxxxxx
+const EMAILJS_SERVICE_ID = "service_eezyshv";
+const EMAILJS_TEMPLATE_ID = "template_owyodze";
+const EMAILJS_PUBLIC_KEY = "EErk85e6B69SyCVNh";
 
 const Contact = () => {
   const [loading, setLoading] = useState(false);
@@ -13,29 +16,19 @@ const Contact = () => {
     const form = e.currentTarget;
     const data = Object.fromEntries(new FormData(form) as any);
 
-    if (!FORM_ENDPOINT) {
-      toast.info("Form endpoint not configured. Sending via mail.");
-      window.location.href = `mailto:ashwinideshpande2001@gmail.com?subject=Portfolio%20Contact&body=${encodeURIComponent(
-        `Name: ${data.name}\nEmail: ${data.email}\n\n${data.message}`
-      )}`;
-      return;
-    }
-
     try {
       setLoading(true);
-      const res = await fetch(FORM_ENDPOINT, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(data),
-      });
-      if (res.ok) {
-        toast.success("Message sent. Thank you!");
-        form.reset();
-      } else {
-        toast.error("Failed to send. Please try again.");
-      }
+      await emailjs.sendForm(
+        EMAILJS_SERVICE_ID,
+        EMAILJS_TEMPLATE_ID,
+        form,
+        { publicKey: EMAILJS_PUBLIC_KEY }
+      );
+      toast.success("Message sent. Thank you!");
+      form.reset();
     } catch (err) {
-      toast.error("Network error. Please try again later.");
+      console.error(err);
+      toast.error("Failed to send. Please try again.");
     } finally {
       setLoading(false);
     }
