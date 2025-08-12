@@ -8,7 +8,7 @@ const Projects = () => {
       description:
         "Interactive analytics on 50K+ NYC trip records. KPIs: trip volume, revenue trends, top zones, distance-duration metrics.",
       tools: ["Python", "Pandas", "SQLite", "Streamlit", "Seaborn", "Plotly"],
-      link: "https://github.com/Ashwini042001", // Placeholder
+      link: "https://urban-mobility-dashboard-imcixhhchh5smutncu7g5c.streamlit.app/", // Placeholder
     },
   ];
 
